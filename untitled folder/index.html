@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar-container">
+        <!-- <div class="nav-item1"></div> -->
+        <a href="index.html" class="nav-logo-link"><div class="nav-item2"><img src="logo.png" height=100px  ></div></a>
+        <!-- <div class="nav-item3"></div> -->
+        <div class="dropdown">
+            <a class="dropbtn" href="#hobbies" style="text-decoration: none;">Hobbies
+            
+              
+            </a>
+            <div class="dropdown-content">
+              <a href="fitness.html">Fitness</a>
+              <a href="books.html">Reading</a>
+              <a href="tabletennis.html">Table Tennis</a>
+            </div>
+          </div> 
+        <a href="https://www.youtube.com/@AnubhayTalks/videos" target="_blank" class="nav-link">Youtube Channel</a>
+        <a href="blog/" class="nav-link">My Projects</a>
+        <a href="https://readabhaysblogs.wordpress.com" target="_blank" class="nav-link">BlogPost</a>
+        <a href="contactme.html" class="nav-link">Contact Me</a>
+
+    </div>
+
+    <div class="background">
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+
+        </div>
+        <section style="padding: 25px;
+        height: 100%;">
+        <div>
+        <div class="rotating-text">
+        <p class="hello">Hello! My Name is </p>
+        <p class="rname">
+          <span class="word w-1" data-locale="en"></span>
+          <span class="word w-2" data-locale="hi"></span>
+          <span class="word w-3" data-locale="ja"></span>
+          <span class="word w-4" data-locale="ru"></span>
+          <span class="word w-5" data-locale="ko"></span>
+        </p>
+        
+
+        
+      </div>
+      <p class="intro"> Currently in my first year in Chemical Enginnering at IIT Bombay. I love to explore new things, technologies and meet new people. I am currently 18 year old and was born on 26th May 2005.
+        <br><br>
+        I have experience in Python(OOP, some libraries like numpy,pandas,pytorch etc), C++, html, css. <br>I have also some experience in backend via django. <br>I am also well versed with version control and can work quite smoothly with git and github. <br> Recently through WIDS, I gained some exp in Stocks , Neural Networks ,etc.
+      
+      </p>
+
+        </div>
+
+        <div class="myphoto">
+        <img src="img/myphoto.png" class="myphoto">
+        </div>
+
+        </section>
+        <div class="background">
+          <div class="box">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+          </div>
+          
+        <section>
+        <p class="htext">My Hobbies</p>
+
+        <div class="hobbies" id="hobbies">
+          <img src="img/hobbies.jpg"   usemap="#image-map">
+
+          <map name="image-map">
+            <area href="books.html" coords="248,236,460,464" shape="rect">
+            <area href="fitness.html" coords="56,109,12,236,42,271,103,247,174,161,260,174,298,132,259,75,158,21,125,13,46,42,30,72,43,94" shape="poly">
+            <area href="tabletennis.html" coords="421,96,444,135,491,161,526,196,578,199,634,158,574,99,572,54,511,1,446,13,416,49" shape="poly">
+        </map>
+
+
+        </div>
+
+        </section>
+        </div>
+          
+     
+    
+
+    
+    
+
+      
+      
+      
+      <!-- JS -->
+      <script>
+        "use strict";
+  
+        const name = {
+        "en":["A","b","h","a","y","_","C","h","a","n","d","r","a"],
+        "hi":["अ","भ","य","_","चं","द्रा"," "],
+        "ja":["ア","バ","イ","_","チ","ャ","ン","ド","ラ"],
+        "ru":["А","б","х","а","й","_","Ч","а","н","д","р","а"],
+        "ko":["아","바","이","_","찬","드","라"]
+        };
+
+        let words = document.querySelectorAll(".word");
+        words.forEach((word) => {
+        const locale = word.dataset.locale;
+        let letters = name[locale];
+        word.textContent = "";
+        letters.forEach((letter) => {
+            let span = document.createElement("span")
+            span.textContent = letter;
+            span.className = "letter";
+            word.append(span);
+        });
+        });
+
+        let currentWordIndex = 0;
+        let maxWordIndex = words.length - 1;
+        words[currentWordIndex].style.opacity = "1";
+
+        let rotateText = () => {
+        let currentWord = words[currentWordIndex];
+        let nextWord =
+            currentWordIndex === maxWordIndex ? words[0] : words[currentWordIndex + 1];
+        //rotate out letters of current word
+        Array.from(currentWord.children).forEach((letter, i) => {
+            setTimeout(() => {
+            letter.className = "letter out";
+            }, i * 80)
+        });
+
+        //reveal and rotate in letters of next word
+        nextWord.style.opacity = "1";
+        Array.from(nextWord.children).forEach((letter, i) => {
+            letter.className = "letter behind";
+            setTimeout(() => {
+            letter.className = "letter in";
+            }, 340 + i * 80)
+        });
+        currentWordIndex =
+            currentWordIndex === maxWordIndex ? 0 : currentWordIndex + 1;
+        };
+
+        rotateText();
+        setInterval(rotateText, 4000);
+      </script>
+    
+</body>
+</html>

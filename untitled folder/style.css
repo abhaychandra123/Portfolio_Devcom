@@ -1,0 +1,346 @@
+body {
+    margin:0;
+    padding:0;
+}
+
+.navbar-container{
+    background: linear-gradient(to left,#00b4d8, #0077b6, #03045e);
+    display: grid;
+    grid-area: header;
+    height: 100px;
+    grid-gap:10px;
+    font-size: 1em;
+
+    
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: auto;
+    align-items: center;
+    justify-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+.nav-item2{
+    font-family: 'Azeret Mono', monospace;
+    font-size: 3em;
+    /* color: white; */
+}
+.nav-logo-link{
+    text-decoration: none;
+}
+.nav-link{
+    text-decoration: none;
+    color: white;
+    font-family: 'Azeret Mono', monospace;
+}
+.nav-link:hover{
+    text-decoration: none;
+    color: #45cb85;
+    transition: 0.2s;
+}
+.button-link{
+    text-decoration: none;
+    color: white;
+    font-family: 'Azeret Mono', monospace;
+}
+
+
+
+.background{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    z-index: 1;
+    background: linear-gradient(90deg, rgb(2, 0,.6) 0%,rgb(3, 3, 162) 35%,cyan 100%);
+
+}
+.myphoto{
+    z-index: 2;
+    position: absolute;
+    top:3vh;
+    right: 3vw;
+    height: 400px;
+}
+
+@media screen and (max-width: 600px) {
+
+    .myphoto{
+        
+      height: 200px;
+    }
+    
+}
+.intro{
+ bottom: 15vh;
+ color: white;
+ width: 50vw;
+ left: 50px;
+ font-family: 'Azeret Mono', monospace;
+    font-size: 1.75em;
+}
+.ft{
+
+    position: absolute;
+    color: white;
+    width: 50vw;
+    left: 50px;
+    font-family: 'Azeret Mono', monospace;
+    font-size: 1.75em;
+    top: 30%;
+    right: 5px;
+}
+.hobbies{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+.htext{
+    position: relative;
+    z-index: 2;
+    margin-top: 125px;
+    margin-left:23vw ;
+    width: 50vw;
+    height: 60px;
+ font-size: 3em;
+ font-family: 'Azeret Mono', monospace;
+
+ /* display: block; */
+ background-color: #00eaff;
+ border-radius: 50px;
+ text-align: center;
+}
+.box div{
+    z-index: 1;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border: 6px solid rgb(255, 255, 255);
+}
+
+.box div:nth-child(1){
+    top:10%;
+    left:5%;
+    animation: animate 7s linear infinite;
+}
+.box div:nth-child(2){
+    top:75%;
+    left:10%;
+    animation: animate 10s linear infinite;
+}.box div:nth-child(3){
+    top:50%;
+    left:20%;
+    animation: animate 5s linear infinite;
+}.box div:nth-child(4){
+    top:56%;
+    left:50%;
+    animation: animate 12s linear infinite;
+}.box div:nth-child(5){
+    top:23%;
+    left:34%;
+    animation: animate 8s linear infinite;
+}.box div:nth-child(6){
+    top:43%;
+    left:60%;
+    animation: animate 15s linear infinite;
+}.box div:nth-child(7){
+    top:60%;
+    left:79%;
+    animation: animate 4s linear infinite;
+}.box div:nth-child(8){
+    top:90%;
+    left:89%;
+    animation: animate 12s linear infinite;
+}.box div:nth-child(9){
+    top:27%;
+    left:70%;
+    animation: animate 7s linear infinite;
+}.box div:nth-child(10){
+    top:10%;
+    left:50%;
+    animation: animate 9s linear infinite;
+}
+.box div:nth-child(11){
+    top:90%;
+    left:45%;
+    animation: animate 9s linear infinite;
+}.box div:nth-child(12){
+    top:80%;
+    left:25%;
+    animation: animate 9s linear infinite;
+}
+
+
+@keyframes animate{
+    0%{
+      transform: scale(0) translateY(-90px) rotate(360deg);
+    }
+    100%{
+      transform: scale(1.3) translateY(-90px) rotate(0deg);
+      opacity: 0;
+    }
+}
+
+.rotating-text {
+justify-content: left;
+align-items: center;
+font-family: monospace;
+font-weight: bold;
+font-size: 3vw;
+color: #fff;
+}
+.hello{
+
+/* pass */
+}
+.rotating-text p { /*> ' '*/
+display: inline-flex;
+margin: 0;
+vertical-align: top;
+}
+
+.rotating-text p .word {
+position: absolute;
+display: flex;
+opacity: 0;
+}
+
+.rotating-text p .word .letter {
+transform-origin: center center 25px;
+}
+
+.rotating-text p .word .letter.out {
+transform: rotateX(90deg);
+transition: 0.5s cubic-bezier(0.6, 0, 0.7, 0.2);
+}
+
+.rotating-text p .word .letter.in {
+transition: 0.8s ease;
+}
+
+.rotating-text p .word .letter.behind {
+transform: rotateX(-90deg);
+}
+
+.w-1 {
+color: #e74c3c;
+}
+
+.w-2 {
+color: #11ff00;
+}
+
+.w-3 {
+color: #ff00e1;
+}
+
+.w-4 {
+color: yellow;
+}
+
+.w-5 {
+color: #00fcfc;
+}
+
+/* contact me */
+.col::placeholder{
+    font-size: 30px;
+    color: #000;
+}
+.container{
+    background-color: rgba(0, 0, 0, 0.34);
+    color: orange;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    height: 70vh;
+    
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 2vw;
+    margin-top: 10vh;
+}
+
+.form-control{
+    font-size: 20px;
+    width: 50vw;
+    height: 1vh;
+    margin: 10px;
+    border-radius: 100px;
+    padding: 20px;
+background-color: rgb(217, 213, 213);
+}
+.message{
+    height: 7vh;
+}
+/* res nav */
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    font-size: 17px;   
+    font-family: 'Azeret Mono', monospace;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    margin: 0;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    font-family: 'Azeret Mono', monospace;
+
+    background: linear-gradient(to left,#00b4d8, #0077b6);
+
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .navbar-container a:hover, .dropdown:hover .dropbtn {
+
+    color: #45cb85;
+  }
+  
+  .dropdown-content a:hover {
+    /* background-color: #979797; */
+    color: #45cb85;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+/* fitness */
+
+.pa-gallery-player-widget{
+    display: block;
+    position: absolute;
+    right: 2vw;
+    z-index: 2;
+    width:60vw; 
+    height:80vh; 
+}
+
+.ft{
+    position: relative;
+    width: 25%;
+    z-index: 3;
+}
