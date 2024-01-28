@@ -6,3 +6,6 @@ I have used html, css and js to make this , the background animations that we se
 
 TO RUN IT:
  download the 'untitled folder' and it contains all the files necessary to run the website. 
+
+Can also use the hosted page's link: 
+https://abhaychandra123.github.io/Portfolio_Devcom/untitled%20folder/
